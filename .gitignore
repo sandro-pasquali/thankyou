@@ -1,0 +1,19 @@
+# Logs
+#
+logs
+*.log
+.idea
+
+# Runtime data
+#
+pids
+*.pid
+*.seed
+
+node_modules
+
+# gulp build
+public
+
+# configuration vars
+config/.config.json
