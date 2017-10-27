@@ -3,8 +3,6 @@
 let WebSocket = require('ws');
 let SServer = WebSocket.Server;
 
-let config = require('../config');
-
 let arrayToStream = require('./transformers/arrayToStream.js');
 let timeTransformer = require('./transformers/time.js');
 let sentimentTransformer = require('./transformers/sentiment.js');
@@ -25,10 +23,12 @@ module.exports = server => {
 	localSS.on('connection', ws => {
 	
 		let keepalive;
+
+		console.log(process.env)
 		
 		// A remote SMS gateway
 		//
-		let switchboard = new WebSocket(config.URL);
+		let switchboard = new WebSocket(process.env.SWITCHBOARD_URL);
 	
 		switchboard.onopen = () => {
 		

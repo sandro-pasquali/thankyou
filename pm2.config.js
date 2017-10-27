@@ -1,4 +1,5 @@
-{
+
+module.exports = {
   "apps": {
     "name": "thankyou-server",
     "script": "./server.js",
@@ -21,7 +22,8 @@
     },
     "env": {
       "NODE_ENV": "development",
+      "SWITCHBOARD_URL": process.env.SWITCHBOARD_URL || 'https://stormy-everglades-38882.herokuapp.com/',
       "PM2_PROCESS_NAME": "thankyou-server"
     }
   }
-}
+};
